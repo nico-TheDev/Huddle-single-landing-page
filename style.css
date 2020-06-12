@@ -1,0 +1,225 @@
+:root{
+    
+--violet: rgba(103, 75, 175);
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    box-sizing: inherit;
+}
+
+h1,h2,h3{
+    font-family: 'Poppins',sans-serif;
+}
+
+.attribution { font-size: 0.7rem; text-align: center; }
+.attribution a { color: white;text-decoration: none; }
+
+body{
+    background-color: var(--violet);
+    background-image: url(./images/bg-desktop.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+/* CONTAINER */
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    height: 100vh;
+    display: grid;
+    grid-gap: 20px;
+    align-items:center;
+}
+
+.huddle-logo{
+    width: 16%;
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+
+.hero{
+    display: grid;
+    grid-template-columns:repeat(2,1fr);
+    grid-gap: 2rem;
+}
+
+.hero img{
+    width: 100%;
+}
+
+.textblock{
+    display: grid;
+    letter-spacing: 1px;
+    margin-left: 60px;
+    grid-template-rows: auto auto 1fr;
+    grid-gap: 20px;
+    padding-top: 60px;
+}
+
+.textblock h2{
+    font-size: 2.5rem;
+    color: white;
+    font-weight: 600;
+
+}
+
+.textblock p{
+    font-family: "Open-Sans",Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: white;
+}
+
+.textblock button{
+    margin-top: 1rem;
+    border: none;
+    font-size: 1.2rem;
+    background-color: white;
+    padding: 1rem 3.5rem;
+    justify-self: start;
+    border-radius: 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.9);
+    align-self: start;
+    color: var(--violet);
+}
+
+.textblock button:hover{
+    background-color: blueviolet;
+    cursor: pointer;
+    color: white;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.icon-logo{
+    font-size: 1.3rem;
+    justify-self: center;
+    align-self: center;
+    color: white;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin-left: 10px;
+
+}
+
+
+.icon-link{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+.links a{
+    color: inherit;
+}
+
+.fb:hover{
+    color: blue;
+    border-color: blue;
+}
+
+.twt:hover{
+    color: cyan;
+    border-color: cyan;
+}
+
+.insta:hover{
+    color: red;
+    border-color: red;
+
+}
+
+/* QUERIES */
+
+@media (max-width:900px){
+
+    html{
+        font-size: 80%;
+    }
+
+    body{
+        background-image: url(./images/bg-mobile.svg);
+        background-position: top;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .container{
+        background-color: none;
+        background-image: none;
+        grid-template-columns: repeat(auto-fit,minmax(375px,1fr));
+        grid-template-rows: auto 1fr 1fr auto;
+        grid-template-areas: 
+        "logo"
+        "main"
+        "link"
+        ;
+    }
+
+    .huddle-logo{
+        width: 35%;
+        grid-area: logo;
+    }
+
+    .hero{
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "pic"
+        "text";
+    }
+
+    .hero img {
+        width: 100%;
+        grid-area: pic;
+    }
+
+    .textblock{
+        justify-items: center;
+        justify-content: center;
+        grid-area: text;
+        margin: 0;
+        text-align: center;
+    }
+
+    .textblock h2{
+        text-align: center;
+        justify-self: center;
+    }
+
+    .textblock p {
+        text-align: center;
+        width: 80%;
+        font-size: 1.1rem;
+    }
+    
+
+    .textblock button{
+        place-self:center;
+        margin-bottom: 0rem;
+        padding: 1rem 4.5rem;
+    }
+
+    .links{
+        justify-content: center;
+        margin: 2rem 0;
+    }
+}
